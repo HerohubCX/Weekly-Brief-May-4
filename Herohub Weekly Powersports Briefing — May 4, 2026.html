@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Herohub Weekly Powersports Briefing — May 4, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #ffffff;
+      color: #1C1C2E;
+      line-height: 1.6;
+    }
+    :root {
+      --dark: #0D1B2A;
+      --navy: #1C2B3A;
+      --orange: #FF6B2B;
+      --amber: #F7941D;
+      --light-orange: #FFF4EE;
+      --gray: #F5F7FA;
+      --mid-gray: #8892A4;
+      --polaris-blue: #0055B8;
+      --canam-gold: #B8860B;
+      --industry-purple: #6B3FA0;
+    }
+
+    /* HEADER */
+    .header {
+      background: var(--dark);
+      padding: 28px 52px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 30px;
+      color: white;
+      letter-spacing: -1px;
+    }
+    .logo-text span { color: var(--orange); }
+    .briefing-pill {
+      display: inline-block;
+      background: var(--orange);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 9px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-top: 6px;
+    }
+    .header-right { text-align: right; }
+    .issue-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: white;
+    }
+    .issue-date {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.45);
+      margin-top: 5px;
+    }
+
+    /* BANNER */
+    .banner {
+      background: var(--orange);
+      padding: 10px 52px;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+    .banner-tag {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: white;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 52px;
+    }
+
+    .intro {
+      margin-bottom: 32px;
+      padding-bottom: 22px;
+      border-bottom: 2px solid #EAEEF4;
+    }
+    .intro h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 21px;
+      color: var(--dark);
+      margin-bottom: 7px;
+    }
+    .intro p {
+      font-size: 13.5px;
+      color: var(--mid-gray);
+      max-width: 700px;
+      line-height: 1.6;
+    }
+
+    /* CARD */
+    .card {
+      background: #ffffff;
+      border: 1px solid #E3E9F2;
+      border-radius: 12px;
+      margin-bottom: 26px;
+      overflow: hidden;
+      box-shadow: 0 3px 16px rgba(0,0,0,0.07);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      padding: 20px 26px;
+      border-bottom: 1px solid #E3E9F2;
+      gap: 16px;
+      background: #FAFBFD;
+    }
+    .card-num {
+      flex-shrink: 0;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 16px;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 1px;
+    }
+    .card-meta { flex: 1; }
+    .card-cat {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .cat-polaris { color: var(--polaris-blue); }
+    .cat-canam { color: var(--canam-gold); }
+    .cat-industry { color: var(--industry-purple); }
+    .card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 17.5px;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+    .card-source {
+      font-size: 11px;
+      color: var(--mid-gray);
+      margin-top: 5px;
+    }
+    .card-source a { color: var(--orange); text-decoration: none; }
+    .card-source a:hover { text-decoration: underline; }
+
+    /* CARD BODY — 2 col */
+    .card-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .col-intel {
+      padding: 20px 26px;
+      border-right: 1px solid #E3E9F2;
+    }
+    .col-coldcall {
+      padding: 20px 26px;
+    }
+    .col-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      margin-bottom: 11px;
+    }
+    .intel-text {
+      font-size: 13.5px;
+      color: #3D4A5C;
+      line-height: 1.68;
+    }
+    .intel-text strong { color: var(--dark); }
+
+    .script-box {
+      background: #F6F8FB;
+      border-left: 3px solid var(--orange);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: #2C3A4A;
+      line-height: 1.65;
+      font-style: italic;
+    }
+    .script-box strong {
+      color: var(--orange);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    /* MIND MAP */
+    .card-map {
+      padding: 18px 26px 22px;
+      background: var(--gray);
+      border-top: 1px solid #E3E9F2;
+    }
+    .map-inner {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .map-topic-box {
+      background: var(--dark);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 11.5px;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-align: center;
+      line-height: 1.4;
+      min-width: 110px;
+      flex-shrink: 0;
+    }
+    .map-arrow {
+      font-size: 22px;
+      color: var(--orange);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .map-products {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      flex: 1;
+    }
+    .map-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .map-badge {
+      background: var(--orange);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      padding: 5px 11px;
+      border-radius: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      line-height: 1.3;
+    }
+    .map-why {
+      font-size: 12.5px;
+      color: #4A5568;
+      padding-top: 3px;
+      line-height: 1.5;
+    }
+    .map-why strong { color: var(--dark); font-weight: 600; }
+
+    /* FOOTER */
+    .footer {
+      background: var(--dark);
+      padding: 22px 52px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .footer-left {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.6;
+    }
+    .footer-left strong { color: rgba(255,255,255,0.85); }
+    .footer-sources {
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      text-align: right;
+      line-height: 1.7;
+    }
+    .footer-sources a { color: var(--orange); text-decoration: none; }
+
+    @media print {
+      .card { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div>
+    <div class="logo-text">HERO<span>HUB</span></div>
+    <div class="briefing-pill">Internal Sales Team Briefing</div>
+  </div>
+  <div class="header-right">
+    <div class="issue-title">Weekly Powersports Briefing</div>
+    <div class="issue-date">Week of May 4, 2026 &nbsp;·&nbsp; For Sales Team Use Only</div>
+  </div>
+</header>
+
+<!-- BANNER -->
+<div class="banner">
+  <span class="banner-tag">🏍️ 5 Talking Points</span>
+  <span class="banner-tag">📞 Cold Call Openers</span>
+  <span class="banner-tag">🗺️ Product Connection Maps</span>
+  <span class="banner-tag">🎯 Polaris &amp; Can-Am Focus</span>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+
+  <div class="intro">
+    <h2>This Week in Powersports — What Dealers Are Talking About</h2>
+    <p>Use these 5 talking points to open real conversations with dealership managers and operators. Each includes current market intel, a natural cold call opener, and a connection map showing which Herohub products tie directly to the topic.</p>
+  </div>
+
+  <!-- TP 1 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">1</div>
+      <div class="card-meta">
+        <div class="card-cat cat-industry">⚡ Industry Headwind</div>
+        <div class="card-title">Tariffs Are Squeezing BRP/Can-Am Dealers — BRP Suspends FY27 Guidance</div>
+        <div class="card-source">Source: <a href="https://www.motorcyclepowersportsnews.com/brp-suspends-fy27-guidance/" target="_blank">motorcyclepowersportsnews.com</a> &nbsp;·&nbsp; <a href="https://powersportsbusiness.com/news/brp/2026/04/23/tariff-uncertainty-ripples-across-powersports-industry-as-oems-associations-respond/" target="_blank">powersportsbusiness.com</a></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="col-intel">
+        <div class="col-label">📰 The Intel</div>
+        <div class="intel-text">
+          New U.S. Section 232 tariffs imposed a <strong>25% tariff on the full value</strong> of imported ORVs and snowmobiles — replacing the previous tariff that only applied to metal content. BRP has suspended its FY27 financial guidance entirely due to the uncertainty. Unlike Polaris, which has significant U.S. manufacturing, <strong>BRP/Can-Am imports the majority of its lineup</strong>, making their dealers especially exposed to higher floor plan costs, margin compression, and consumer hesitation at the point of sale.
+        </div>
+      </div>
+      <div class="col-coldcall">
+        <div class="col-label">📞 Cold Call Opener</div>
+        <div class="script-box">
+          <strong>"Hey [Name], I've been following the BRP tariff situation — the 25% hit on full vehicle value is a completely different ballgame than what dealers were used to dealing with. I work with a lot of Can-Am stores, and I'm curious — how is your team handling it on the floor when buyers start asking about the price jumps? That's actually where we help dealerships at Herohub..."</strong>
+        </div>
+      </div>
+    </div>
+    <div class="card-map">
+      <div class="col-label" style="margin-bottom:14px;">🗺️ Herohub Product Connection Map</div>
+      <div class="map-inner">
+        <div class="map-topic-box">Tariff Pressure<br>&amp; Buyer Hesitation</div>
+        <div class="map-arrow">→</div>
+        <div class="map-products">
+          <div class="map-row">
+            <div class="map-badge">HerohubIQ</div>
+            <div class="map-why">Trains sales staff daily on <strong>price objection handling</strong> and value justification — critical when consumers push back on higher sticker prices caused by tariff pass-through</div>
+          </div>
+          <div class="map-row">
+            <div class="map-badge">Herohub20 + HHOS</div>
+            <div class="map-why">Monthly financial reporting + peer accountability helps dealers <strong>protect margins and make data-driven decisions</strong> when the market is volatile and unpredictable</div>
+          </div>
+          <div class="map-row">
+            <div class="map-badge">20 Groups</div>
+            <div class="map-why">Connect with non-competing dealers navigating the <strong>same tariff pressure</strong> — shared strategies and faster adaptation through peer accountability</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TP 2 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">2</div>
+      <div class="card-meta">
+        <div class="card-cat cat-polaris">🟦 Polaris</div>
+        <div class="card-title">Polaris Q1 2026: Sales Up 8%, Dealer Inventory Rightsized — Utility Demand Is the Bright Spot</div>
+        <div class="card-source">Source: <a href="https://powersportsbusiness.com/news/polaris/2026/04/29/polaris-q1-shows-tighter-inventory-and-continued-utility-demand/" target="_blank">powersportsbusiness.com</a> &nbsp;·&nbsp; <a href="https://www.motorcyclepowersportsnews.com/2026-polaris-off-road-lineup/" target="_blank">motorcyclepowersportsnews.com</a></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="col-intel">
+        <div class="col-label">📰 The Intel</div>
+        <div class="intel-text">
+          Polaris opened 2026 with Q1 revenue of <strong>$1.66B, up 8% year-over-year</strong>. Dealer inventory is now described as "healthy" — with improved balance between current and non-current units, and snowmobile inventory down more than 50% from a year ago. <strong>Utility vehicles, led by the RANGER lineup, are the primary demand driver.</strong> Dealers who have their operations and sales process dialed in are seeing better turn times and margin recovery. This is a very different story than 2025, and it creates an opening for performance conversations.
+        </div>
+      </div>
+      <div class="col-coldcall">
+        <div class="col-label">📞 Cold Call Opener</div>
+        <div class="script-box">
+          <strong>"Hey [Name], Polaris dealers are having a very different Q1 than last year — leaner inventory, utility demand is strong. With the RANGER side of your business picking up, are your sales advisors getting consistent reps on presenting those models? A lot of stores we work with find that training doesn't keep up when product demand accelerates. That's exactly where Herohub comes in..."</strong>
+        </div>
+      </div>
+    </div>
+    <div class="card-map">
+      <div class="col-label" style="margin-bottom:14px;">🗺️ Herohub Product Connection Map</div>
+      <div class="map-inner">
+        <div class="map-topic-box">Inventory Recovery<br>&amp; Utility Growth</div>
+        <div class="map-arrow">→</div>
+        <div class="map-products">
+          <div class="map-row">
+            <div class="map-badge">HHOS / Herohub20</div>
+            <div class="map-why">Data-driven dealership OS helps Polaris dealers <strong>sustain the inventory recovery</strong> with monthly reporting on current-to-non-current ratios, GPU targets, and YoY trend tracking</div>
+          </div>
+          <div class="map-row">
+            <div class="map-badge">HerohubIQ</div>
+            <div class="map-why">Major Units Sales Pathway ensures staff can <strong>capitalize on increased RANGER foot traffic</strong> with consistent, practiced presentations and cross-sell from entry to premium</div>
+          </div>
+          <div class="map-row">
+            <div class="map-badge">20 Groups</div>
+            <div class="map-why">Benchmark your dealership's turn rates and GPU against <strong>peer Polaris stores</strong> who are seeing the same utility demand surge</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TP 3 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">3</div>
+      <div class="card-meta">
+        <div class="card-cat cat-polaris">🟦 Polaris</div>
+        <div class="card-title">2026 RANGER Lineup Expands: $9,999 Entry to New Factory Enclosed Cab Models</div>
+        <div class="card-source">Source: <a href="https://www.motorcyclepowersportsnews.com/polaris-expands-enclosed-cab-lineup-with-new-ranger-models/" target="_blank">motorcyclepowersportsnews.com</a> &nbsp;·&nbsp; <a href="https://www.motorcyclepowersportsnews.com/oem-update-2026-polaris-ranger-500/" target="_blank">OEM Update: RANGER 500</a></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="col-intel">
+        <div class="col-label">📰 The Intel</div>
+        <div class="intel-text">
+          Polaris has expanded the 2026 RANGER lineup at both ends of the market. The new <strong>RANGER 500 at $9,999</strong> is compact, practical, and designed for everyday utility — broadening the buyer pool significantly. At the premium end, the new <strong>2026 RANGER 1000 CAB and 2027 RANGER XP 1000 CAB</strong> bring factory enclosed cabs — a growing category for year-round riders. Both begin shipping to dealers in <strong>August 2026</strong>. This is a genuine product refresh that gives dealers more SKUs to sell across a wider range of customer profiles.
+        </div>
+      </div>
+      <div class="col-coldcall">
+        <div class="col-label">📞 Cold Call Opener</div>
+        <div class="script-box">
+          <strong>"Hi [Name], I was reading about the new Polaris RANGER lineup coming in August — it's interesting they're anchoring at $9,999 now with the 500. When Polaris drops an expansion like that, it brings in buyers who haven't been in your store before. Are your advisors trained to sell across that full range — from the entry 500 all the way up to the enclosed cab premium models? That cross-sell gap is exactly what we help dealers close at Herohub..."</strong>
+        </div>
+      </div>
+    </div>
+    <div class="card-map">
+      <div class="col-label" style="margin-bottom:14px;">🗺️ Herohub Product Connection Map</div>
+      <div class="map-inner">
+        <div class="map-topic-box">New RANGER<br>Lineup Launch</div>
+        <div class="map-arrow">→</div>
+        <div class="map-products">
+          <div class="map-row">
+            <div class="map-badge">HerohubIQ</div>
+            <div class="map-why">Scenario simulations that <strong>train staff on new model features</strong>, entry-to-premium cross-sell conversations, and accessory upsells — ready before August launch</div>
+          </div>
+          <div class="map-row">
+            <div class="map-badge">Bootcamp: Sales &amp; Digital</div>
+            <div class="map-why">Prepare for the launch wave with <strong>lead management, follow-up systems, and digital campaigns</strong> to maximize new-model traffic and conversions</div>
+          </div>
+          <div class="map-row">
+            <div class="map-badge">HerohubU</div>
+            <div class="map-why">Monthly eLearning keeps the <strong>entire team current on new Polaris product knowledge</strong> so advisors aren't caught flat-footed when new models hit the floor</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TP 4 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">4</div>
+      <div class="card-meta">
+        <div class="card-cat cat-canam">🟡 Can-Am / BRP</div>
+        <div class="card-title">Can-Am Reinvents the Defender: Ground-Up Overhaul + Industry's Most Affordable HVAC Side-by-Side</div>
+        <div class="card-source">Source: <a href="https://www.motorcyclepowersportsnews.com/can-am-breaks-road-new-ground-2026/" target="_blank">motorcyclepowersportsnews.com</a> &nbsp;·&nbsp; <a href="https://www.motorcyclepowersportsnews.com/can-am-announces-new-defender-package-and-outlander-electric-colorway/" target="_blank">Defender Package Update</a></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="col-intel">
+        <div class="col-label">📰 The Intel</div>
+        <div class="intel-text">
+          Can-Am gave the Defender a <strong>ground-up overhaul</strong> for 2026 — one of the most significant updates in the utility SxS segment this cycle. The headline addition: the <strong>Defender DPS CAB HD10 with HVAC starting at $23,999</strong> — now the most affordable HVAC-equipped side-by-side in the industry, in three-seat and MAX six-seat configurations. For Can-Am dealers, this is a major sales opportunity, but it also creates a knowledge gap. Staff need to know how to position the value, justify the price point, and close competitively against the Polaris RANGER CAB lineup.
+        </div>
+      </div>
+      <div class="col-coldcall">
+        <div class="col-label">📞 Cold Call Opener</div>
+        <div class="script-box">
+          <strong>"[Name], Can-Am just dropped what might be the biggest Defender overhaul they've done — and the HVAC cab model at $23,999 is going to bring a completely new type of buyer into your store. That year-round utility customer is different from your typical weekend rider. Is your team trained to have that consultative conversation? Because that deal closes very differently than a standard utility unit, and that's exactly what Herohub coaches..."</strong>
+        </div>
+      </div>
+    </div>
+    <div class="card-map">
+      <div class="col-label" style="margin-bottom:14px;">🗺️ Herohub Product Connection Map</div>
+      <div class="map-inner">
+        <div class="map-topic-box">Next-Gen Defender<br>Launch</div>
+        <div class="map-arrow">→</div>
+        <div class="map-products">
+          <div class="map-row">
+            <div class="map-badge">HerohubIQ</div>
+            <div class="map-why">Simulates real Defender sales conversations — <strong>feature walkthroughs, handling vs. Polaris RANGER objections</strong>, and F&amp;I upsell on higher-ticket HVAC cab units</div>
+          </div>
+          <div class="map-row">
+            <div class="map-badge">Bootcamp: F&amp;I Cert.</div>
+            <div class="map-why">Higher-priced units = more F&amp;I opportunity. <strong>Maximize PRU and product penetration</strong> on the new Defender at $23,999+ with proper menu presentation and roleplay</div>
+          </div>
+          <div class="map-row">
+            <div class="map-badge">HerohubU</div>
+            <div class="map-why">Monthly eLearning ensures your <strong>entire team understands the new Defender platform</strong> — including parts advisors who can position accessories for the cab upgrade</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TP 5 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">5</div>
+      <div class="card-meta">
+        <div class="card-cat cat-canam">🟡 Can-Am / BRP</div>
+        <div class="card-title">Can-Am's Electric Outlander Targets Hunters — Are Can-Am Dealers Ready for EV Conversations?</div>
+        <div class="card-source">Source: <a href="https://www.motorcyclepowersportsnews.com/can-am-announces-new-defender-package-and-outlander-electric-colorway/" target="_blank">motorcyclepowersportsnews.com</a> &nbsp;·&nbsp; <a href="https://powersportsbusiness.com/top-stories/2025/08/19/can-am-reveals-new-outlander-electric-atv-and-next-gen-defender-sxs/" target="_blank">powersportsbusiness.com</a></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="col-intel">
+        <div class="col-label">📰 The Intel</div>
+        <div class="intel-text">
+          Can-Am launched the <strong>2026 Outlander Electric in Dark Wildland Camo at $13,599</strong>, specifically targeting the hunting and outdoor community who want a quiet, zero-emission ATV for the field. It runs on the same Rotax E-Power powerpack as their electric motorcycles and snowmobiles. <strong>This is a new buyer type walking into powersports stores</strong> — first-time ATV buyers and hunters who will ask questions traditional sales staff aren't trained to answer: range, charging, terrain performance. Dealers who aren't ready will lose these deals to better-prepared competitors.
+        </div>
+      </div>
+      <div class="col-coldcall">
+        <div class="col-label">📞 Cold Call Opener</div>
+        <div class="script-box">
+          <strong>"Hey [Name], I saw Can-Am dropped the new Outlander Electric in camo — clearly going right after the hunting market. That's a buyer who probably hasn't been in a powersports store before and they're going to have completely different questions. How is your team preparing for electric ATV conversations? Range anxiety, charging, riding terrain — those are objections your staff has never had to handle before. That's a conversation I'd love to have about how we train for exactly this kind of market shift at Herohub..."</strong>
+        </div>
+      </div>
+    </div>
+    <div class="card-map">
+      <div class="col-label" style="margin-bottom:14px;">🗺️ Herohub Product Connection Map</div>
+      <div class="map-inner">
+        <div class="map-topic-box">Electric ATV<br>Market Entry</div>
+        <div class="map-arrow">→</div>
+        <div class="map-products">
+          <div class="map-row">
+            <div class="map-badge">HerohubU</div>
+            <div class="map-why">Monthly eLearning platform purpose-built for <strong>rapid product knowledge updates</strong> — get your team fluent on EV tech, charging, and new buyer objections before they walk in the door</div>
+          </div>
+          <div class="map-row">
+            <div class="map-badge">HerohubIQ</div>
+            <div class="map-why">AI-powered simulations create <strong>reps on EV buyer conversations before customers arrive</strong> — so your staff isn't learning on the floor at the cost of a lost deal</div>
+          </div>
+          <div class="map-row">
+            <div class="map-badge">Bootcamp: Sales &amp; Digital</div>
+            <div class="map-why">Digital marketing training to <strong>capture first-time EV ATV buyers searching online</strong> — build campaigns that reach the hunting/outdoor audience Can-Am is targeting</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-left">
+    <strong>HEROHUB</strong> &nbsp;·&nbsp; Weekly Powersports Briefing &nbsp;·&nbsp; May 4, 2026<br>
+    For internal team use only &nbsp;·&nbsp; herohub.com
+  </div>
+  <div class="footer-sources">
+    Sources: &nbsp;<a href="https://www.motorcyclepowersportsnews.com" target="_blank">motorcyclepowersportsnews.com</a>
+    &nbsp;·&nbsp; <a href="https://powersportsbusiness.com" target="_blank">powersportsbusiness.com</a>
+    &nbsp;·&nbsp; <a href="https://www.prnewswire.com" target="_blank">prnewswire.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
